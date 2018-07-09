@@ -6,14 +6,16 @@ const knex = require('./connection.js')
 const app = module.exports = express()
 const port = parseInt(process.env.PORT || 3000)
 
-const routes = require('./courseRoutes')
+const courseRoutes = require('./courseRoutes')
+const commentRoutes = require('./commentRoutes')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(morgan(process.env.NODE_ENV !== 'production' ? 'dev' : 'combined'))
 app.use(cors({ origin: true, credentials: true }))
 
-app.use('/locations', routes)
+app.use('/locations', courseRoutes)
+app.use('/comments', commentRoutes)
 
 app.use(notFound)
 app.use(errorHandler)
