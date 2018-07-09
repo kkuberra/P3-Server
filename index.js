@@ -7,7 +7,7 @@ const app = module.exports = express()
 const port = parseInt(process.env.PORT || 3000)
 
 const courseRoutes = require('./courseRoutes')
-const commentRoutes = require('./commentRoutes')
+const commentsRoutes = require('./commentsRoutes')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -15,10 +15,10 @@ app.use(morgan(process.env.NODE_ENV !== 'production' ? 'dev' : 'combined'))
 app.use(cors({ origin: true, credentials: true }))
 
 app.use('/locations', courseRoutes)
-app.use('/comments', commentRoutes)
+app.use('/comments', commentsRoutes)
 
 app.use(notFound)
-app.use(errorHandler)
+app.use(errorHandler)   
 
 function notFound(req, res, next) {
     const url = req.originalUrl
