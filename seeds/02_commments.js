@@ -29,5 +29,8 @@ exports.seed = function (knex, Promise) {
           comment: 'this course was shit'
         },
       ]);
+      })
+      .then(() => {
+            return knex.raw("ALTER SEQUENCE comments_id_seq RESTART WITH 6;")
     });
 };

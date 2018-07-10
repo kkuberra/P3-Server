@@ -10,6 +10,7 @@ module.exports = {
                 .first()
     },
     create(comment){
+        console.log("create", comment)
         return knex('comments')
                 .insert(comment)
                 .returning('*')

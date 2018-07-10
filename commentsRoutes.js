@@ -19,7 +19,8 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  queries.create(req.body)
+  
+    queries.create(req.body)
     .then(newComment => {
       res.json(newComment)
     })

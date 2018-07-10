@@ -5,19 +5,19 @@ exports.seed = function (knex, Promise) {
       // Inserts seed entries
       return knex('locations').insert([{
           id: 1,
-          name: 'Course x',
-          lat: 39.7564,
-          lng: 104.5456,
-          hazards: 'water',
-          holes: 18
+          name: 'Birds Nest Disc Park',
+          lat: 39.816678,
+          lng: -105.202629,
+          hazards: 'weeds',
+          holes: 24
         },
         {
           id: 2,
-          name: 'Course y',
-          lat: 39.4578,
-          lng: 109.1234,
-          hazards: 'weeds',
-          holes: 9
+          name: 'Paco Sanchez Park Disc Park',
+          lat: 39.734354,
+          lng: -105.038970,
+          hazards: 'water',
+          holes: 18
         }
       ]);
     })
@@ -25,28 +25,3 @@ exports.seed = function (knex, Promise) {
         return knex.raw("ALTER SEQUENCE locations_id_seq RESTART WITH 3;")
     })
 };
-
-
-
-
-
-
-
-
-[{
-    id: 1,
-    name: 'Course x',
-    lat: 39.7564,
-    lng: 104.5456,
-    hazards: 'water',
-    holes: 18
-  },
-  {
-    id: 2,
-    name: 'Course y',
-    lat: 39.4578,
-    lng: 109.1234,
-    hazards: 'weeds',
-    holes: 9
-  }
-]
